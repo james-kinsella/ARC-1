@@ -1,40 +1,18 @@
-import numpy as np
-import json
-
-path = r'..\data\training\7b7f7511.json'
-json_data = json.loads(open(path).read())
-black = 0
-blue = 1
-
-def solve(json_data):
-    train = json_data['train']
-    test = json_data['test']
-    inputs = []
-    for i in range(len(train)):
-        inputs.append(train[i]['input'])
+import common as comm
+import itertools as itt
     
-    for i in range(len(test)):
-        inputs.append(test[i]['input'])
-    
-    for inp in inputs:
-        solve_input(inp)
-    
-def solve_input(input):
-    y_length = len(input)
-    x_length = len(input[0])
+def solve(input):
+    y_length,x_length = comm.get_dimentions(input)
 
     if y_length > x_length:
         for i in range(y_length // 2):
             input.pop()
     else:
-        for i in range(y_length):
-            for j in range(x_length // 2):
-                input[i].pop()    
-    output(input)
-
-def output(inp):
-    for i in inp:
-        print(*i, sep=' ')
-    print()
+        for y,x in itt.product(range(y_length), range(x_length // 2)):
+            input[y].pop()    
+    comm.print_output(input)
         
-solve(json_data)
+path = r'..\data\training\7b7f7511.json'
+json_data = comm.load_json(path)
+inputs = comm.get_inputs(json_data)
+comm.solve_all(solve, inputs)
