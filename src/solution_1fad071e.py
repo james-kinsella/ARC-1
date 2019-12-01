@@ -1,5 +1,6 @@
 import common as comm
 import itertools as itt
+import sys
     
 def solve(input):
     blue_count = 0
@@ -18,7 +19,7 @@ def format_output(blue_count):
             output.append(0)
     return [output]
         
-path = r'..\data\training\1fad071e.json'
+path = sys.argv[1]
 json_data = comm.load_json(path)
 inputs = comm.get_inputs(json_data)
 comm.solve_all(solve, inputs)

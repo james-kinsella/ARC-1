@@ -1,5 +1,6 @@
 import common as comm
 import numpy as np
+import sys
 
 def solve(input):
     colours = list(np.unique(input))
@@ -59,7 +60,7 @@ def format_output(inp, colours):
     return output_array
 
 
-path = r'..\data\training\5ad4f10b.json'    
+path = sys.argv[1]
 json_data = comm.load_json(path)
 inputs = comm.get_inputs(json_data)
 

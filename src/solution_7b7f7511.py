@@ -1,6 +1,7 @@
 import common as comm
 import itertools as itt
-    
+import sys
+
 def solve(input):
     y_length,x_length = comm.get_dimentions(input)
 
@@ -12,7 +13,7 @@ def solve(input):
             input[y].pop()
     return input
         
-path = r'..\data\training\7b7f7511.json'
+path = sys.argv[1]
 json_data = comm.load_json(path)
 inputs = comm.get_inputs(json_data)
 comm.solve_all(solve, inputs)
