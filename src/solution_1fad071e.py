@@ -7,8 +7,7 @@ def solve(input):
     for y,x in itt.product(range(y_length - 1), range(x_length - 1)):
         if input[y][x] == 1 and input[y + 1][x + 1] == 1:
             blue_count = blue_count + 1
-    output_array = format_output(blue_count)
-    comm.print_output(output_array)
+    return format_output(blue_count)
 
 def format_output(blue_count):
     output = []

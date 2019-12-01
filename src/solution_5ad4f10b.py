@@ -5,11 +5,8 @@ def solve(input):
     colours = list(np.unique(input))
     colours.remove(0)
     sort_colours(input, colours)
-
-    sub_grid = find_boundries(input, colours[0])
-    output_array = format_output(sub_grid, colours)
-    
-    comm.print_output(output_array)
+    sub_grid = find_boundries(input, colours[0])  
+    return format_output(sub_grid, colours)
     
 def sort_colours(input, colours):
     #the 'primary' colour is never present on any border

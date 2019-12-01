@@ -9,8 +9,8 @@ def solve(input):
             input.pop()
     else:
         for y,x in itt.product(range(y_length), range(x_length // 2)):
-            input[y].pop()    
-    comm.print_output(input)
+            input[y].pop()
+    return input
         
 path = r'..\data\training\7b7f7511.json'
 json_data = comm.load_json(path)

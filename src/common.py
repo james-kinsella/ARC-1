@@ -21,12 +21,12 @@ def get_inputs(json_data):
 
 def solve_all(solve_funct, inputs):  
     for inp in inputs:
-        solve_funct(inp)
-        print()
+        print_output(solve_funct(inp))
 
 def print_output(output):
     for i in output:
         print(*i, sep=' ')
+    print()
         
 def get_dimentions(inp):
     return len(inp),len(inp[0])
