@@ -1,3 +1,11 @@
+# Hand coded Solutiond for ARC
+
+This repository contains hand coded solutions to three tasks in from the Abstraction and Reasoning Corpus (ARC)
+The solutions and common.py, which all solutions reference, are located the src folder. use python [solution name] [path to json data] to execute the print output to the desired task.
+
+This repository was forked from https://github.com/fchollet/ARC
+From here onwards is the original README file
+
 # The Abstraction and Reasoning Corpus (ARC)
 
 This repository contains the ARC task data, as well as a browser-based interface for humans to try their hand at solving the tasks manually.
